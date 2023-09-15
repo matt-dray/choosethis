@@ -1,20 +1,30 @@
 #' Start Your Adventure
 #'
+#' @param show_links Logical. Present clickable links in the R console?
+#'     Defaults to the result of [cli::ansi_has_hyperlink_support].
+#'
+#' @details Clickable ANSI links are only possible in certain terminals,
+#'     including RStudio's console but not macOS's Terminal. Use
+#'     `options(choosethis.show_links = FALSE)` to force text prompts rather
+#'     than clickable links.
+#'
 #' @return Nothing.
 #'
-#' @examples question()
+#' @examples begin()
 #'
 #' @export
-begin <- function() {
+begin <- function(
+    show_links = getOption("choosethis.show_links", cli::ansi_has_hyperlink_support())
+) {
 
   cli::cli_text("You reach a fork in the road.")
 
-  if (choosethis_opts()$show_links) {
+  if (show_links) {
     cli::cli_text("* Go {.run [left](choosethis::left())}")
     cli::cli_text("* Go {.run [right](choosethis::right())}")
   }
 
-  if (!choosethis_opts()$show_links) {
+  if (!show_links) {
     cli::cli_text("* Go left [choosethis::left()]")
     cli::cli_text("* Go right [choosethis::right()]")
     cli::cli_text("Copy-paste the code for your option into the console.")

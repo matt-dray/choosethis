@@ -2,3 +2,4 @@
 
 * Set up package and documentation.
 * Included demo functions `begin()`, `left()` and `right()`.
+* Simplified `choosethis.show_links` option.
