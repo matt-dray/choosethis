@@ -11,8 +11,8 @@ or
 proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 <!-- badges: end -->
 
-A clickable ‘Choose Your Own Adventure’ in the R Console, powered by
-[{cli}](https://cran.r-project.org/package=cli).
+A clickable ‘Choose Your Own Adventure’ concept in the R Console,
+powered by [{cli}](https://cran.r-project.org/package=cli).
 
 <img src='man/figures/demo.gif' fig-alt="A gif of the R console. The function 'begin' is run from the 'choosethis' package, which pprints the message 'you reach a fork in the road'. Two clickable options are presented: go left or go right. The user clicks 'go right' and this automatically runs the 'right' function and outputs the text 'you died'.">
 
@@ -36,9 +36,10 @@ begin()
     * Go left
     * Go right
 
-If your console supports links, then the words ‘left’ and ‘right’ in the
-printout will be clickable. Choose one and you’ll be taken to the next
-section.
+If your console supports links (e.g. RStudio), then the words ‘left’ and
+‘right’ in the printout will be clickable (not shown above). Click one
+and you’ll be taken to the next choice. If unsupported, you’ll be show
+functions to copy-paste yourself.
 
 ## Theory
 
