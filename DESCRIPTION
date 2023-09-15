@@ -1,0 +1,14 @@
+Package: choosethis
+Title: Choose Your Own Adventure
+Version: 0.0.0.9000
+Authors@R: 
+    person("Matt", "Dray", , "mwdray@gmail.com", role = c("aut", "cre"))
+Description: Play a 'Choose Your Own Adventure' game in the console by following
+    the prompts. Options are presented as clickable links in certain 
+    environments, such as RStudio.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    cli
