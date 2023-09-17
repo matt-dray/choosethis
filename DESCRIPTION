@@ -1,11 +1,11 @@
 Package: choosethis
-Title: Choose Your Own Adventure
+Title: Demos of 'cli' Clickable Links
 Version: 0.0.0.9000
-Authors@R: 
-    person("Matt", "Dray", , "mwdray@gmail.com", role = c("aut", "cre"))
-Description: Play a 'Choose Your Own Adventure' game in the console by following
-    the prompts. Options are presented as clickable links in certain 
-    environments, such as RStudio.
+Authors@R: person("Matt", "Dray", , "mwdray@gmail.com", role = c("aut", "cre"))
+Description: Two sketches: play a text adventure in the console by following the
+    prompts, and perform a data summary using a clickabel interface. Options are
+    presented to the user as clickable links in supported terminals, such as
+    RStudio's console.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/summarise.R
 \name{ask_col_mean}
 \alias{ask_col_mean}
-\title{Ask to Take Mean of a Column}
+\title{Ask to Take the Mean of a Column}
 \usage{
 ask_col_mean(dataframe)
 }
@@ -14,10 +14,10 @@ summarised.}
 Nothing.
 }
 \description{
-Ask to Take Mean of a Column
+Ask to Take the Mean of a Column
 }
 \details{
-The suer will be prompted to choose a numeric column from the
+The user will be prompted to choose a numeric column from the
 data.frame object provided in 'dataframe'.
 }
 \examples{

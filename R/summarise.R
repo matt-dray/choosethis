@@ -1,9 +1,9 @@
-#' Ask to Take Mean of a Column
+#' Ask to Take the Mean of a Column
 #'
 #' @param dataframe A data.frame. Should have numeric data columns to be
 #'     summarised.
 #'
-#' @details The suer will be prompted to choose a numeric column from the
+#' @details The user will be prompted to choose a numeric column from the
 #'     data.frame object provided in 'dataframe'.
 #'
 #' @return Nothing.
