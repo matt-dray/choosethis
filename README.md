@@ -9,14 +9,18 @@
 yet, or the repository is only intended to be a limited example, demo,
 or
 proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+[![Blog
+post](https://img.shields.io/badge/rostrum.blog-post-008900?labelColor=000000&logo=data%3Aimage%2Fgif%3Bbase64%2CR0lGODlhEAAQAPEAAAAAABWCBAAAAAAAACH5BAlkAAIAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAAC55QkISIiEoQQQgghRBBCiCAIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAAh%2BQQJZAACACwAAAAAEAAQAAAC55QkIiESIoQQQgghhAhCBCEIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAA7)](https://www.rostrum.blog/posts/2023-09-17-chosethis/)
 <!-- badges: end -->
 
-A clickable ‘Choose Your Own Adventure’ concept in the R Console,
-powered by [{cli}](https://cran.r-project.org/package=cli).
+Demonstrations of using [{cli}](https://cran.r-project.org/package=cli)
+to present clickable links to the user in their console. Read more in
+[the accompanying
+blogpost](https://www.rostrum.blog/posts/2023-09-17-chosethis/).
 
-<img src='man/figures/demo.gif' fig-alt="A gif of the R console. The function 'begin' is run from the 'choosethis' package, which pprints the message 'you reach a fork in the road'. Two clickable options are presented: go left or go right. The user clicks 'go right' and this automatically runs the 'right' function and outputs the text 'you died'.">
+<img src='man/figures/demo.gif' fig-alt="A gif of the R console. The function 'begin' is run from the 'choosethis' package, which prints the message 'you reach a fork in the road'. Two clickable options are presented: go left or go right. The user clicks 'go right' and this automatically runs the 'right' function and outputs the text 'you died'.">
 
-## How to play
+## Demos
 
 You can install {choosethis} from GitHub.
 
@@ -25,6 +29,8 @@ if (!require(remotes)) install.packages("remotes")
 install_github("matt-dray/choosethis")
 library(choosethis)
 ```
+
+### 1. Text adventure
 
 To start a new game:
 
@@ -38,22 +44,34 @@ begin()
 
 If your console supports links (e.g. RStudio), then the words ‘left’ and
 ‘right’ in the printout will be clickable (not shown above). Click one
-and you’ll be taken to the next choice. If unsupported, you’ll be show
+and you’ll be taken to the next choice. If unsupported, you’ll be shown
 functions to copy-paste yourself.
+
+### 2. Summarise a data.frame
+
+To begin:
+
+``` r
+ask_col_mean(ChickWeight)
+```
+
+    What column would you like the mean of?
+    * weight
+    * Time
+
+If your console supports links (e.g. RStudio), then the column names in
+the printout (`weight`, `Time`) will be clickable (not shown above).
+Click one and you’ll be returned the mean value for that column.
 
 ## Theory
 
 The [{cli} package](https://cran.r-project.org/package=cli) lets you
 present [clickable ANSI
-links](https://cli.r-lib.org/reference/links.html) to the user in the R
-console.
+links](https://cli.r-lib.org/reference/links.html) to the user in
+supported terminals, such as RStudio.
 
-That means we can create a ‘Choose Your Own Adventure’ where the user is
-presented with options that they can click to advance the story.
-
-{choosethis} uses
+`choosethis::begin()` uses
 [cli::ansi_has_hyperlink_support()](https://cli.r-lib.org/reference/style_hyperlink.html)
-to discover whether a user’s terminal can support these links. They will
-work in RStudio, but not Terminal on macOS, for example. If links aren’t
-supported, then the function name will be presented instead of a
-clickable link.
+to discover whether a user’s terminal can support these links. If links
+aren’t supported, then the underlying expression will be presented to
+the user instead of a clickable link.

@@ -4,9 +4,9 @@
 \name{choosethis-package}
 \alias{choosethis}
 \alias{choosethis-package}
-\title{choosethis: Choose Your Own Adventure}
+\title{choosethis: Demos of 'cli' Clickable Links}
 \description{
-Play a 'Choose Your Own Adventure' game in the console by following the prompts. Options are presented as clickable links in certain environments, such as RStudio.
+Two sketches: play a text adventure in the console by following the prompts, and perform a data summary using a clickabel interface. Options are presented to the user as clickable links in supported terminals, such as RStudio's console.
 }
 \author{
 \strong{Maintainer}: Matt Dray \email{mwdray@gmail.com}
